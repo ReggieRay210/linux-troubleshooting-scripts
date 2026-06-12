@@ -1,1 +1,101 @@
-# linux-troubleshooting-scripts
+# Linux Troubleshooting Scripts
+![Linux Distribution](https://img.shields.io/badge/Linux-Ubuntu-%23E95420?logo=ubuntu)
+![GNU Bash Version](https://img.shields.io/badge/Bash-4%2B-%234EAA25?logo=gnubash&logoColor=white)
+[![License](https://img.shields.io/badge/license-MIT-orange)](LICENSE)
+![Made By](https://img.shields.io/badge/Made%20By-Reginald%20Griffin%20II-%23E85C33)
+
+A collection of Bash scripts to perform the following actions:
+- Display system information.
+- Analyze log files to display needed information.
+- Logs when the disk space reaches the warning threshold.
+- Backup existing txt files in the given source directory to the given destination directory.
+
+## 🛠️ Prerequisites
+
+- **Linux environment** (Ubuntu 20.04+, Debian 11+, or any distribution with Bash 4+)
+- **Bash** (version 4+)
+
+## 📁 Project Structure
+```bash
+linux-troubleshooting-scripts/
+├── System_info.sh      # Displays system informaion
+├── backup.sh           # Backup script
+├── disk_alert.sh       # Logs disk usage
+├── log_analyzer.sh     # Analyze provide logs
+└── README.md           # This file
+```
+
+## 📦 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/ReggieRay210/linux-troubleshooting-scripts.git
+cd linux-troubleshooting-scripts
+```
+2. Make scripts executable:
+```bash
+chmod +x *.sh
+```
+3. Move scripts to `~/bin/` and add to PATH for global access (**Optional**):
+```bash
+mkdir -p ~/bin
+cp *.sh ~/bin/
+export PATH="$PATH:$HOME/bin/"
+```
+
+## 📖 Usage 
+### System Info
+```bash 
+./system_info.sh
+```
+_Sample Output:_
+```bash 
+=== System Information ===
+Date: Fri Jun 12 18:35:33 CDT 2026
+Uptime: 15 hours, 27 minutes
+User: ubuntu
+Memory: 384Mi/891Mi
+Disk: 3.0G/3.8G (80% used)
+```
+### File Backup
+```bash
+./backup.sh test_source test_dest
+```
+_Sample Output:_
+```bash
+'test_source/file1.txt' -> 'test_dest/file1.txt'
+'test_source/file2.txt' -> 'test_dest/file2.txt'
+Backup Complete
+These files were backed up:
+
+file1.txt
+file2.txt
+```
+### Disk Space Alert
+```bash  
+./disk_alert.sh
+```
+_Sample Output:_
+```bash 
+ Fri Jun 12 18:49:40 CDT 2026 INFO: Disk OK at 80%.
+```
+
+### Log Analyzer
+```bash 
+./log_analyzer.sh server.log
+```
+_Sample Output:_
+```bash 
+=== Analyzing log: server.log ===
+File Contains: 7 lines.
+Reported: 3 error messages.
+Reported: 2 warning messages.
+
+=== Last five(5) lines ===
+2025-05-12 10:12:45 ERROR Failed to connect to database
+2025-05-12 10:15:10 INFO User login successful
+2025-05-12 10:20:33 ERROR Timeout on API call
+2025-05-12 10:25:59 WARN Retrying connection
+2025-05-12 10:30:17 ERROR Disk space low
+```
