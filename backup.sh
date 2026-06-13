@@ -25,7 +25,7 @@ if [[ -d "${SOURCE}" ]]; then
         else
                 mkdir -p ./"${DEST}"
                 cp -v "${SOURCE}"/*.txt "${DEST}"
-                echo -e "\033[0;32mBackup Complete"
+                echo -e "\033[0;32mBackup Complete\n""\033[1;37mThese files were backed up:"
                 ls -l "${DEST}" | awk '{print $9}'
         fi
 else
