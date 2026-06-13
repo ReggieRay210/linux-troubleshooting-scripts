@@ -99,3 +99,12 @@ Reported: 2 warning messages.
 2025-05-12 10:25:59 WARN Retrying connection
 2025-05-12 10:30:17 ERROR Disk space low
 ```
+## 🔧 Future Improvements
+* Add a Linux service restarter.
+
+## 📜 License
+MIT License — feel free to use, modify, and distribute.
+See the `LICENSE` file for more information.
+
+## 👤 Author
+Reginald Griffin II — [@ReggieRay210](https://github.com/ReggieRay210)
