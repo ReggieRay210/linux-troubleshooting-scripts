@@ -9,10 +9,12 @@
 # =====================================================================================
 
 TARGET="${1:-/}"
+
+LOG_FILE="$HOME/linux-troubleshooting-scripts/disk_alert.log"
 disk_usage_percent=$(df -h "${TARGET}" | awk 'NR==2 {print $5}'| tr -d '%')
 
 if [ "${disk_usage_percent}" -gt 80 ]; then
-        echo -e "$(date) \033[0;33mWARNING: Disk Usage on ${TARGET} is ${disk_usage_percent}%." >> ./disk_alert.log
+        echo -e "$(date) \033[0;33mWARNING: Disk Usage on ${TARGET} is ${disk_usage_percent}%." >> "$LOG_FILE"
 else
         echo -e "$(date) \033[0;32mINFO: Disk OK at ${disk_usage_percent}%."
 fi
