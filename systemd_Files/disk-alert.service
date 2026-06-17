@@ -1,0 +1,17 @@
+# Systemd Unit file that calls the disk_alert script. 
+# This unit file will restart automatically after 60 seconds to check the system's disk usage.
+
+[Unit]
+Description=Disk Alert Service (User-Level)
+After=network.target
+
+[Service]
+ExecStart=%h/linux-troubleshooting-scripts/disk_alert.sh
+Restart=always
+RestartSec=60
+StandardOutput=journal
+StandardError=journal
+
+
+[Install]
+WantedBy=default.target
