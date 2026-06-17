@@ -9,6 +9,7 @@ A collection of Bash scripts to perform the following actions:
 - Analyze log files to display needed information.
 - Logs when the disk space reaches the warning threshold.
 - Backup existing txt files in the given source directory to the given destination directory.
+- Start or Restart a user-level systemd service. 
 
 ## 🛠️ Prerequisites
 
@@ -22,6 +23,7 @@ linux-troubleshooting-scripts/
 ├── backup.sh           # Backup script
 ├── disk_alert.sh       # Logs disk usage
 ├── log_analyzer.sh     # Analyze provide logs
+├── restart_service.sh  # Start or Restart systemd Service
 └── README.md           # This file
 ```
 
@@ -99,8 +101,17 @@ Reported: 2 warning messages.
 2025-05-12 10:25:59 WARN Retrying connection
 2025-05-12 10:30:17 ERROR Disk space low
 ```
-## 🔧 Future Improvements
-* Add a Linux service restarter.
+
+### Restart Systemd Service
+```bash
+./restart_service.sh <service-name>
+```
+_Sample Output:_ Listed in service_restarts.log
+```bash
+Wed Jun 17 17:30:08 CDT 2026: reporter.service is not running. Starting service...
+Wed Jun 17 17:30:08 CDT 2026: reporter.service Started.
+Wed Jun 17 17:30:34 CDT 2026: Restarting reporter.service...
+```
 
 ## 📜 License
 MIT License — feel free to use, modify, and distribute.
