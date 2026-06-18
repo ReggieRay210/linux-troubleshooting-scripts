@@ -9,7 +9,8 @@ A collection of Bash scripts to perform the following actions:
 - Analyze log files to display needed information.
 - Logs when the disk space reaches the warning threshold.
 - Backup existing txt files in the given source directory to the given destination directory.
-- Start or Restart a user-level systemd service. 
+- Start or restart a user-level systemd service.
+- Automate a basic network health check.
 
 ## 🛠️ Prerequisites
 
@@ -25,6 +26,7 @@ linux-troubleshooting-scripts/
 │   ├── log_analyzer.sh
 │   ├── reporter.sh
 │   ├── restart_service.sh
+│   ├── network_check.sh
 │   └── system_info.sh
 ├── systemd/
 │   ├── disk-alert.service
@@ -118,6 +120,24 @@ _Sample Output:_ Listed in service_restarts.log
 Wed Jun 17 17:30:08 CDT 2026: reporter.service is not running. Starting service...
 Wed Jun 17 17:30:08 CDT 2026: reporter.service Started.
 Wed Jun 17 17:30:34 CDT 2026: Restarting reporter.service...
+```
+### Network Health Check
+```bash
+./network_check.sh <URL>
+```
+_Sample Output:_
+```bash
+====== Network Health Check ======
+Date: Thu Jun 18 13:32:24 CDT 2026
+Public IP collected: ###.###.##.###
+Ping test to pandora.com...
+Ping successful
+DNS resolution for pandora.com...
+DNS resolution successful
+Port 443 reachability for pandora.com...
+Port 443 is reachable.
+
+====== Network Check Complete ======
 ```
 
 ## 📜 License
