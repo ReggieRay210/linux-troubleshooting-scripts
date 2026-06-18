@@ -5,7 +5,7 @@ Description=My Reporter Service (User-Level)
 After=network.target
 
 [Service]
-ExecStart=%h/linux-troubleshooting-scripts/reporter.sh
+ExecStart=%h/linux-troubleshooting-scripts/scripts/reporter.sh
 Restart=always
 RestartSec=10
 StandardOutput=journal
