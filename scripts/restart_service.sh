@@ -4,6 +4,8 @@
 # Description: Restarts or starts a user-level systemd service
 # Usage: ./restart_service.sh <service-name>
 
+set -e
+
 SERVICE="$1"
 
 # Check if service argument is listed
