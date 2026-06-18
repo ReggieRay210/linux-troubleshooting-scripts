@@ -6,7 +6,7 @@ Description=Disk Alert Service (User-Level)
 After=network.target
 
 [Service]
-ExecStart=%h/linux-troubleshooting-scripts/disk_alert.sh
+ExecStart=%h/linux-troubleshooting-scripts/scripts/disk_alert.sh
 Restart=always
 RestartSec=60
 StandardOutput=journal
