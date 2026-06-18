@@ -19,12 +19,19 @@ A collection of Bash scripts to perform the following actions:
 ## 📁 Project Structure
 ```bash
 linux-troubleshooting-scripts/
-├── System_info.sh      # Displays system informaion
-├── backup.sh           # Backup script
-├── disk_alert.sh       # Logs disk usage
-├── log_analyzer.sh     # Analyze provide logs
-├── restart_service.sh  # Start or Restart systemd Service
-└── README.md           # This file
+├── scripts/
+│   ├── backup.sh
+│   ├── disk_alert.sh
+│   ├── log_analyzer.sh
+│   ├── reporter.sh
+│   ├── restart_service.sh
+│   └── system_info.sh
+├── systemd/
+│   ├── disk-alert.service
+│   └── reporter.service
+├── CHANGELOG.md
+├── LICENSE
+└── README.md
 ```
 
 ## 📦 Installation
