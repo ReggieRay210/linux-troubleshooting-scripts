@@ -8,7 +8,7 @@
 #
 # Usage: ./network_check.sh <destination URL>
 ######################################
-set -x
+set -e
 
 DEST="${1}"
 
