@@ -11,6 +11,7 @@ A collection of Bash scripts to perform the following actions:
 - Backup existing txt files in the given source directory to the given destination directory.
 - Start or restart a user-level systemd service.
 - Automate a basic network health check.
+- Performs a comprehensive system health check
 
 ## 🛠️ Prerequisites
 
@@ -20,13 +21,17 @@ A collection of Bash scripts to perform the following actions:
 ## 📁 Project Structure
 ```bash
 linux-troubleshooting-scripts/
+├── log/
+│   ├── disk_alert.log
+│   └── summary_report.log
 ├── scripts/
 │   ├── backup.sh
 │   ├── disk_alert.sh
 │   ├── log_analyzer.sh
+│   ├── network_check.sh
 │   ├── reporter.sh
 │   ├── restart_service.sh
-│   ├── network_check.sh
+│   ├── system_health_report.sh
 │   └── system_info.sh
 ├── systemd/
 │   ├── disk-alert.service
@@ -140,6 +145,58 @@ Port 443 is reachable.
 ====== Network Check Complete ======
 ```
 
+### System Summary Report
+```bash
+./system_health_report.sh <URL - optional>
+```
+_Sample Output in terminal:_
+```bash
+====== SYSTEM HEALTH CHECK ======
+Fri Jun 19 17:09:50 CDT 2026
+
+--- System Info ---
+Uptime: 13 hours, 40 minutes
+User: ubuntu
+Memory: 202Mi/891Mi
+Disk: 3.0G/3.8G (82% used)
+
+--- Disk Usage ---
+Copy of results will be saved: /home/ubuntu/linux-troubleshooting-scripts/log/disk_alert.log
+
+WARNING: Disk Usage on / is 82%.
+
+--- Network Health Check ---
+Public IP collected: 104.189.79.139
+Ping test to 8.8.8.8...
+✅ Ping successful
+
+DNS resolution for 8.8.8.8...
+✅ DNS resolution successful
+
+Port 443 reachability for 8.8.8.8...
+✅ Port 443 is reachable.
+
+--- Network Check Complete ---
+✅ All network checks passed.
+
+--- Service Status ---
+✅ reporter.service: active (running)
+
+====== REPORT SUMMARY ======
+❌ One or more checks FAILED
+Failed Checks:
+        - Disk Usage over 80%
+Copy of results will be saved: /home/ubuntu/linux-troubleshooting-scripts/log/summary_report.log
+```
+_Sample Output in log_
+```bash
+====== REPORT SUMMARY ======
+Fri Jun 19 17:09:53 CDT 2026
+Status: ❌ FAIL
+Failed Checks:
+        - Disk Usage over 80%
+====== END OF REPORT ======
+```
 ## 📜 License
 MIT License — feel free to use, modify, and distribute.
 See the `LICENSE` file for more information.
