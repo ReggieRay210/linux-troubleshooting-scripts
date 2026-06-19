@@ -1,121 +1,65 @@
-# Changelog
+## [1.0.0] - 2026-06-12
 
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
+### Added
+- Introduce `system_info.sh` script to display essential system information.
+- Add `log_analyzer.sh` script for parsing and analyzing system logs.
+- Include `backup.sh` script for performing system backups.
+- Implement `disk_alert.sh` script for monitoring disk space and providing alerts, featuring color-coded output for notifications.
 
 ### Changed
+- Update internal log descriptions for improved clarity and readability.
+- Revise `README.md` to include comprehensive project information and detailed usage instructions.
 
-- commit 2c2ab357729a333ce956000a8f47191aa6acd79d
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 20:41:02 2026 -0500
-- Update ExecStart path for reporter service
-- commit cf43e125742f0eeefeaa089322c2d985d990ec74
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 20:40:44 2026 -0500
-- Fix path to disk_alert.sh script in service file
-- commit 98bc4e60937ce99910139470f83af8c53d012e01
-- ReggieRay210 <r.griffin2680@gmail.com>
-- Wed Jun 17 20:35:31 2026 -0500
-- Update README and project structure
-- commit dd4103cda5736429afc117422c4626899820b3c4
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 18:22:13 2026 -0500
-- Update log file path in disk_alert.sh
-- commit 8b9a739622da4cd659975ad87405cdfba6a8b5f3
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 18:19:55 2026 -0500
-- Rename System_info.sh to system_info.sh
-- commit ee1c3ed8edc95ec5370bb822a47128edf49cdfa1
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 18:15:24 2026 -0500
-- Add restart service functionality to README
-- Added instructions for restarting a systemd service and included the corresponding script in the list of available scripts.
-- commit c9e92b8a82a22899c3fc109700d654240e5543e3
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 18:02:18 2026 -0500
-- Enhance disk-alert.service with descriptive comments
-- Add comments to disk-alert.service for clarity.
-- commit fb30dd7072d295959b28662168dbe9b991114cea
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 17:56:43 2026 -0500
-- Add script to manage user-level systemd services
-- This script checks if a user-level systemd service is active and restarts it if it is, or starts it if it is not running. It logs the actions taken to a specified log file.
-- commit 0bf1a64d0e4e81e66f228e43a36ddaaf2ecc4d03
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 17:54:48 2026 -0500
-- Add reporter.sh to log service start times
-- commit f63baf530010b7ed5ed5185b1abbea27b84d3ebb
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 17:52:50 2026 -0500
-- Update ExecStart path in reporter.service
-- commit 83f5dabd956bca9ada0c427fae1b6f7c0397b9cc
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Wed Jun 17 17:44:24 2026 -0500
-- Add systemd unit file for reporter service
-- This systemd unit file sets up a user-level reporter service that executes reporter.sh and logs output to the systemd journal.
-- commit 7563232012bbc1ecac3a538dac560a7b555c4512
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:18:51 2026 -0500
-- Add MIT License to the project
-- commit e4267592888bf678da8728ad88fd09a2b4daf142
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:17:54 2026 -0500
-- Delete MIT License
-- commit 431559759f0ff1b5ffbb0f6331af4dcd9800f722
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:14:11 2026 -0500
-- Add MIT License file
-- commit 5f17cbde9a86c4b355216044cf49171ac8c25234
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:13:16 2026 -0500
-- Add MIT License to the project
-- commit a7a75c43882cc34b102431c263b6b044fb0ea5ff
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:12:35 2026 -0500
-- Update README with future improvements and author info
-- Added sections for future improvements, license, and author.
-- commit 50488410b7aacfe45ee55b50116e5f5845a8e1de
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:08:26 2026 -0500
-- Enhance backup complete message output
-- Updated backup completion message to include a list of backed up files.
-- commit 33607e8831757e49984a3b9af0b02b02a4e72603
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:07:06 2026 -0500
-- Fix log file path in disk_alert.sh
-- commit cc2ad034a05981d168c1ba0c67f8a1ddac3d2fba
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 19:05:54 2026 -0500
-- Refactor log_analyzer.sh to improve error handling
-- commit 6607b7dcdd9002b5760883181ec2f8c2b7f1a220
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 18:55:00 2026 -0500
-- Update README with project information and usage
-- Added project details, prerequisites, installation instructions, and usage examples for the Linux troubleshooting scripts.
-- commit 078b69107fbeb77ecc9fc8589bcea81ccae0375c
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 18:10:19 2026 -0500
-- initial commit
-- Copies .txt files that are listed in the given Source directory and copies them to the Destination directory.
-- commit 045c0d702f7ab7c709029f02560235474f36cd50
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 16:41:05 2026 -0500
-- Implement color output for disk alert notifications
-- Add color formatting to disk usage alert messages for better visibility.
-- commit 48c6b5e7bda0d9bcb0e66c17d71c76998165e521
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 12:41:51 2026 -0500
-- Update log description for clarity
-- commit f77762d94b78d8004f6ca33322b655d740431356
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 02:16:49 2026 -0500
-- Add System_info.sh to display system information
-- This script displays system information including date, uptime, current user, memory, and disk usage.
-- commit 3c723ea3365ced676de728af61b520f4a29e395b
-- Reginald Griffin II <74481504+ReggieRay210@users.noreply.github.com>
-- Fri Jun 12 02:15:08 2026 -0500
-- Initial commit
+---
+
+**Migration Notes:**
+This is the initial stable release of the project. No migration is required.
+
+**Contributors:**
+N/A
+
+## [1.0.1] - 2026-06-17
+
+### Added
+- Added MIT License to the project.
+
+### Changed
+- Refactored `log_analyzer.sh` to improve error handling logic.
+- Enhanced backup complete message output for better clarity.
+- Updated `README.md` with information on future improvements and author details.
+
+### Fixed
+- Corrected an invalid log file path in `disk_alert.sh`.
+
+## [1.0.2] - 2026-06-17
+
+### Added
+- Systemd unit file (`reporter.service`) for the reporter service.
+- `reporter.sh` script to log service start times.
+- Script for managing user-level systemd services.
+- Documentation in the README for restarting services.
+
+### Changed
+- Updated `ExecStart` path in `reporter.service`.
+- Enhanced `disk-alert.service` with descriptive comments.
+- Updated the log file path in `disk_alert.sh`.
+- Refined project structure for improved organization.
+
+## [1.0.3] - 2026-06-19
+
+### Added
+- Automated network health checks via `network_check.sh`.
+- Documentation for network health checks in the `README`.
+- A new `system health report script` for comprehensive system summaries.
+- Enhanced `README` with details on the system summary report.
+
+### Changed
+- Updated the `ExecStart` path for the reporter service.
+- Improved error handling in `restart_service.sh`.
+- Revised log file paths and enhanced output messages for better clarity.
+- Refactored `disk_alert.sh` for improved clarity and logging.
+- Enhanced `network_check.sh` with better output formatting.
+- Revised header comments in `system_info.sh` for consistency.
+
+### Fixed
+- Corrected the path to `disk_alert.sh` script within the service file.
